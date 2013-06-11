@@ -1,6 +1,6 @@
 #!/bin/sh
 ############################################################
-# VERSION 0.9 of the password disabler
+# password disabler script to be used as a postinstall script
 ###########################################################
 #
 
