@@ -1,0 +1,21 @@
+#!/bin/sh
+#################################################################
+# Firmare password enabler.
+# Intended to run as a postinstall script for a package that
+# also copies the setregproptool into place first.
+#################################################################
+
+# Set version and password variables.
+VERSION=1.0
+PASSWORD='Password'
+
+# Set path to setregproptool binary.
+SETREGPROPTOOL='/usr/sbin/setregproptool'
+
+# Deactivate the password if it was set. Assuming the password was blank
+$SETREGPROPTOOL -d -o ""
+sleep 1
+# Setting the password and the mode
+$SETREGPROPTOOL -m command -p $PASSWORD -o ""
+
+exit 0

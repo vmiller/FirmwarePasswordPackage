@@ -1,0 +1,17 @@
+#!/bin/sh
+############################################################
+# VERSION 0.9 of the password disabler
+###########################################################
+#
+
+VERSION=1.0
+PASSWORD='Password'
+SETREGPROPTOOL='/usr/sbin/setregproptool'
+
+# Setting the password to blank (takes effect after reboot)
+$SETREGPROPTOOL -p "" -o $PASSWORD
+sleep 1
+# Disable the prompt for the password
+$SETREGPROPTOOL -d -o $PASSWORD
+
+exit 0
